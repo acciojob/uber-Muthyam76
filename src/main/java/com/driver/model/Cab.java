@@ -37,9 +37,9 @@ public class Cab{
     public Cab() {
     }
 
-    public Cab(int perKmRate,int Id,boolean available) {
+    public Cab(int perKmRate,boolean available) {
         this.perKmRate = perKmRate;
-        this.Id=Id;
+       // this.Id=Id;
         this.available=true;
     }
     @OneToOne(mappedBy = "cab",cascade = CascadeType.ALL)
