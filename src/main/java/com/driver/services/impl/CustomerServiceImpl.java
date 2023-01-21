@@ -90,8 +90,7 @@ public class CustomerServiceImpl implements CustomerService {
 		driver.getTripBookingList().remove(tripBooking);
 		customerRepository2.save(customer);
 		driverRepository2.save(driver);
-
-		tripBookingRepository2.delete(tripBooking);
+		//tripBookingRepository2.delete(tripBooking);
 
 	}
 
