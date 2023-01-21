@@ -19,8 +19,8 @@ public class AdminController {
 	AdminServiceImpl adminService;
 
 	@PostMapping("/register")
-	public ResponseEntity<Void> registerAdmin(@RequestBody Admin admin){
-		return new ResponseEntity<>(HttpStatus.OK);
+	public ResponseEntity<String> registerAdmin(@RequestBody Admin admin){
+		return new ResponseEntity<>("kk" ,HttpStatus.OK);
 	}
 
 	@PutMapping("/update")

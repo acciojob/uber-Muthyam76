@@ -11,7 +11,7 @@ public class TripBooking{
     private String toLocation;
     private int distanceInKm;
     private int bill;
-   private  TripStatus tripStatus;
+   private  TripStatus status;
 
     public TripBooking(String fromLocation, String toLocation, int distanceInKm) {
         this.distanceInKm=distanceInKm;
@@ -59,24 +59,24 @@ public class TripBooking{
         this.bill = bill;
     }
 
-    public TripStatus getTripStatus() {
-        return tripStatus;
+    public TripStatus getStatus() {
+        return status;
     }
 
-    public void setTripStatus(TripStatus tripStatus) {
-        this.tripStatus = tripStatus;
+    public void setStatus(TripStatus status) {
+        this.status = status;
     }
 
     public TripBooking() {
     }
 
-    public TripBooking(int tripBookingId,String fromLocation,String toLocation,int distanceInKm,int bill,TripStatus tripStatus) {
+    public TripBooking(int tripBookingId,String fromLocation,String toLocation,int distanceInKm,int bill,TripStatus Status) {
         this.tripBookingId = tripBookingId;
         this.bill=bill;
         this.distanceInKm=distanceInKm;
         this.fromLocation=fromLocation;
         this.toLocation=toLocation;
-        this.tripStatus=tripStatus;
+        this.status = Status;
     }
 
     public Driver getDriver() {

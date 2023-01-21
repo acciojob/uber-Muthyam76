@@ -29,6 +29,7 @@ public class AdminServiceImpl implements AdminService {
 	public void adminRegister(Admin admin) {
 		//Save the admin in the database
 		adminRepository1.save(admin);
+
 	}
 
 	@Override
