@@ -85,9 +85,21 @@ public class CustomerServiceImpl implements CustomerService {
 
 		Driver driver =tripBooking.getDriver();
 		tripBooking.setStatus(TripStatus.CANCELED);
-		customer.getTripBookingList().remove(tripBooking);
-		driver.getCab().setAvailable(true);
-		driver.getTripBookingList().remove(tripBooking);
+		List<TripBooking>bookingList1=customer.getTripBookingList();
+		for(TripBooking t : bookingList1){
+			if(t.equals(tripBooking)){
+				t.setStatus(TripStatus.CANCELED);
+			}
+		}
+		customer.setTripBookingList(bookingList1);
+		List<TripBooking>bookingList2=driver.getTripBookingList();
+		for(TripBooking t : bookingList1){
+			if(t.equals(tripBooking)){
+				t.setStatus(TripStatus.CANCELED);
+				Cab cab=driver.getCab();
+				cab.setAvailable(true);
+			}
+		}
 		customerRepository2.save(customer);
 		driverRepository2.save(driver);
 		//tripBookingRepository2.delete(tripBooking);
