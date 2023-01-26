@@ -20,6 +20,7 @@ public class AdminController {
 
 	@PostMapping("/register")
 	public ResponseEntity<String> registerAdmin(@RequestBody Admin admin){
+		adminService.adminRegister(admin);
 		return new ResponseEntity<>("kk" ,HttpStatus.OK);
 	}
 
