@@ -89,6 +89,7 @@ public class CustomerServiceImpl implements CustomerService {
 		Customer customer=tripBooking.getCustomer();
 
 		Driver driver =tripBooking.getDriver();
+		tripBookingRepository2.save(tripBooking);
 
 
 	}
@@ -100,6 +101,7 @@ public class CustomerServiceImpl implements CustomerService {
 		tripBooking.setStatus(TripStatus.COMPLETED);
 		tripBooking.setBill(0);
 		tripBooking.getDriver().getCab().setAvailable(true);
+		tripBookingRepository2.save(tripBooking);
 		Customer customer=tripBooking.getCustomer();
 
 		Driver driver =tripBooking.getDriver();
